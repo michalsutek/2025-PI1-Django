@@ -60,4 +60,20 @@ urlpatterns = [
 from django.shortcuts import render
 
 def index(request):
-    return render(request, 'kalkulacka/index.html')
+    sucet = 10 + 5
+    saucin = 10 * 5
+    apar = "Cislo A je parne"
+    return render(request, 'kalkulacka/index.html',{"sucet":sucet, "sucin":sucin, "apar":apar})
+
+10. css, obrázky
+- Vytvoriť v priečinku aplikácie priečinok static/nazov_aplikacie
+- v tomto priečinku vytvoriť css (napr. kalkulacka.css)
+- do toho priečinku nakopírovať obrázky (napr. calc.png)
+- do template (index.html) doplniť:
+    - úplne na začiatok {% load static %}
+    - do hlavičky odkaz na style
+    <head>
+        <link rel="stylesheet" href="{% static 'kalkulacka/kalkulacka.css' %}">
+    </head>
+- obrázok vložiť:
+<img src={% static 'kalkulacka/calc.png' %}>

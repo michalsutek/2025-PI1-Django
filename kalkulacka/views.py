@@ -16,4 +16,4 @@ def index(request):
         else:
             vysledok = a / b
 
-    return render(request, 'kalkulacka/index.html', dict(vysledok=vysledok))
+    return render(request, 'kalkulacka/index.html', {"vysledok":vysledok})
